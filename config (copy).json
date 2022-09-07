@@ -1,0 +1,12 @@
+{
+  "side_containers": [
+    {
+      "mongo": {
+        "image": "mongo",
+        "volumes": [
+          "./data:/data/db"
+        ]
+      }
+    }
+  ]
+}

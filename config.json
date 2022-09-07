@@ -1,0 +1,9 @@
+{
+  "side_containers": [
+    {
+      "mongo": {
+        "image": "mongo"
+      }
+    }
+  ]
+}

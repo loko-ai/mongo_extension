@@ -1,0 +1,59 @@
+[
+  {
+    "name": "Mongo_insert",
+    "events": null,
+    "group": "Custom",
+    "description": "",
+    "inputs": [
+      {
+        "id": "input",
+        "label": "input",
+        "service": "",
+        "to": "output"
+      },
+      {
+        "id": "query",
+        "label": "query",
+        "service": "query",
+        "to": "file_output"
+      },
+      {
+        "id": "delete",
+        "label": "delete",
+        "service": "delete",
+        "to": "delete_output"
+      }
+    ],
+    "outputs": [
+      {
+        "id": "output",
+        "label": "output"
+      },
+      {
+        "id": "delete_output",
+        "label": "delete_output"
+      },
+      {
+        "id": "file_output",
+        "label": "file_output"
+      }
+    ],
+    "configured": false,
+    "options": {
+      "group": "Custom",
+      "args": [
+        {
+          "name": "collection",
+          "type": "text",
+          "label": "Collection name",
+          "helper": "Specify the mong collection name"
+        }
+      ],
+      "click": null,
+      "icon": "RiTyphoonFill",
+      "values": {
+      }
+    },
+    "disabled": false
+  }
+]
