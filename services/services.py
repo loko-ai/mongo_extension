@@ -5,7 +5,7 @@ from flask import Flask, request, jsonify
 
 app = Flask("")
 
-client = pymongo.MongoClient(host="mongo")
+client = pymongo.MongoClient(host="mongo_extension_mongo")
 db = client.test_database
 
 
@@ -25,13 +25,19 @@ def query():
     value = request.json.get("value")
     args = request.json.get("args", {})
     coll = args['collection']
+    logging.error(value)
+    logging.error(args)
+    stream = args.get("stream")
 
     ret = list(db[coll].find(value))
     print(ret)
     logging.error(ret)
     for el in ret:
         el['_id'] = str(el['_id'])
-    return jsonify(ret)
+    if stream:
+        return jsonify(ret)
+    else:
+        return jsonify(dict(data=ret))
 
 
 @app.route("/delete", methods=["POST"])
@@ -42,6 +48,17 @@ def delete():
 
     ret = db[coll].delete_many(value)
     return jsonify(f"{ret.deleted_count} documents deleted")
+
+
+@app.route("/list", methods=["POST"])
+def list_collections():
+    value = request.json.get("value")
+    args = request.json.get("args", {})
+    ret = {}
+    for coll in db.list_collection_names():
+        ret[coll] = db[coll].count_documents({})
+
+    return jsonify(ret)
 
 
 if __name__ == "__main__":

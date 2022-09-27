@@ -6,8 +6,8 @@
     "description": "",
     "inputs": [
       {
-        "id": "input",
-        "label": "input",
+        "id": "insert",
+        "label": "insert",
         "service": "",
         "to": "output"
       },
@@ -15,7 +15,13 @@
         "id": "query",
         "label": "query",
         "service": "query",
-        "to": "file_output"
+        "to": "query_output"
+      },
+      {
+        "id": "list",
+        "label": "list",
+        "service": "list",
+        "to": "list_output"
       },
       {
         "id": "delete",
@@ -30,12 +36,16 @@
         "label": "output"
       },
       {
-        "id": "delete_output",
-        "label": "delete_output"
+        "id": "query_output",
+        "label": "query_output"
       },
       {
-        "id": "file_output",
-        "label": "file_output"
+        "id": "list_output",
+        "label": "list_output"
+      },
+      {
+        "id": "delete_output",
+        "label": "delete_output"
       }
     ],
     "configured": false,
@@ -46,12 +56,20 @@
           "name": "collection",
           "type": "text",
           "label": "Collection name",
-          "helper": "Specify the mong collection name"
+          "helper": "Specify the mongo collection name"
+        },
+        {
+          "name": "stream",
+          "type": "boolean",
+          "label": "Stream or not results",
+          "helper": "Stream "
         }
       ],
       "click": null,
       "icon": "RiTyphoonFill",
       "values": {
+        "collection": "text",
+        "stream": true
       }
     },
     "disabled": false

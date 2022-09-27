@@ -1,9 +1,29 @@
 {
-  "side_containers": [
-    {
-      "mongo": {
-        "image": "mongo"
+  "main": {
+  },
+  "side_containers": {
+    "mongo": {
+      "image": "mongo",
+      "ports": {
+        "27017": null
+      }
+    },
+    "mongo_gui": {
+      "image": "ugleiton/mongo-gui",
+      "ports": {
+        "4321": null
+      },
+      "environment": {
+        "MONGO_URL": "mongodb://mongo_extension_mongo:27017"
+      },
+      "expose": [
+        4321
+      ],
+      "gui": {
+        "name": "db manager",
+        "path": "/",
+        "gw": false
       }
     }
-  ]
+  }
 }
