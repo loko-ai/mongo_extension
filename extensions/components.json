@@ -1,6 +1,6 @@
 [
   {
-    "name": "Mongo_insert",
+    "name": "MongoDB",
     "events": null,
     "group": "Custom",
     "description": "",
