@@ -6,7 +6,7 @@
 
 It allows to insert, query, delete data and list your collections directly within the workflows using the **MongoDB** 
 component or to display the DB content from the **db manager** GUI.
-<p align="center"><img src="https://user-images.githubusercontent.com/30443495/230615196-fea82376-3ac1-4e8e-afb1-d259ba072bf5.png" width="80%" /></p>
+<p align="center"><img src="https://user-images.githubusercontent.com/30443495/230626093-6aafa47c-b083-4207-a935-58a7d017be11.png" width="80%" /></p>
 
 ## Configuration
 
