@@ -3,11 +3,12 @@ import logging
 import pymongo
 from flask import Flask, request, jsonify
 
+from config.app_config import HOST, PORT, USERNAME, PASSWORD, DB
+
 app = Flask("")
 
-client = pymongo.MongoClient(host="mongo_extension_mongo")
-db = client.test_database
-
+client = pymongo.MongoClient(host=HOST, port=PORT, username=USERNAME, password=PASSWORD)
+db = client[DB]
 
 @app.route("/", methods=["POST"])
 def test():

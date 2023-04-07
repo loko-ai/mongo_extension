@@ -1,0 +1,26 @@
+version: '3.3'
+networks:
+  mongo_extension:
+    driver: bridge
+services:
+  mongodb:
+    image: mongo
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=myuser
+      - MONGO_INITDB_ROOT_PASSWORD=super-secret-password
+      - MONGO_INITDB_DATABASE=mydb
+    volumes:
+      - /var/opt/loko/mongo/db:/data/db
+    ports:
+      - 27017:27017
+    networks:
+         - mongo_extension
+
+  mongogui:
+    image: ugleiton/mongo-gui
+    ports:
+      - 4321:4321
+    environment:
+      - MONGO_URL=mongodb://myuser:super-secret-password@mongodb:27017
+    networks:
+      - mongo_extension

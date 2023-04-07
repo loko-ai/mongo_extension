@@ -1,3 +1,18 @@
+<html><p><a href="https://loko-ai.com/" target="_blank" rel="noopener"> <img style="vertical-align: middle;" src="https://user-images.githubusercontent.com/30443495/196493267-c328669c-10af-4670-bbfa-e3029e7fb874.png" width="8%" align="left" /> </a></p>
+<h1>Mongo extension</h1><br></html>
+
+
+ **Mongo extension** is a Loko extension dealing with MongoDB connection.
+
+It allows to insert, query, delete data and list your collections directly within the workflows using the **MongoDB** 
+component or to display the DB content from the **db manager** GUI.
+<p align="center"><img src="https://user-images.githubusercontent.com/30443495/230615196-fea82376-3ac1-4e8e-afb1-d259ba072bf5.png" width="80%" /></p>
+
+## Configuration
+
+In the file *config.json* you can configure your MongoDB connection: 
+
+```
 {
   "main": {
     "environment": {
@@ -41,3 +56,6 @@
     }
   }
 }
+```
+
+
