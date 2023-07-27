@@ -1,77 +1,80 @@
 [
-  {
-    "name": "MongoDB",
-    "events": null,
-    "group": "Custom",
-    "description": "",
-    "inputs": [
-      {
-        "id": "insert",
-        "label": "insert",
-        "service": "",
-        "to": "output"
-      },
-      {
-        "id": "query",
-        "label": "query",
-        "service": "query",
-        "to": "query_output"
-      },
-      {
-        "id": "list",
-        "label": "list",
-        "service": "list",
-        "to": "list_output"
-      },
-      {
-        "id": "delete",
-        "label": "delete",
-        "service": "delete",
-        "to": "delete_output"
-      }
-    ],
-    "outputs": [
-      {
-        "id": "output",
-        "label": "output"
-      },
-      {
-        "id": "query_output",
-        "label": "query_output"
-      },
-      {
-        "id": "list_output",
-        "label": "list_output"
-      },
-      {
-        "id": "delete_output",
-        "label": "delete_output"
-      }
-    ],
-    "configured": false,
-    "options": {
-      "group": "Custom",
-      "args": [
-        {
-          "name": "collection",
-          "type": "text",
-          "label": "Collection name",
-          "helper": "Specify the mongo collection name"
-        },
-        {
-          "name": "stream",
-          "type": "boolean",
-          "label": "Stream or not results",
-          "helper": "Stream "
-        }
-      ],
-      "click": null,
-      "icon": "RiTyphoonFill",
-      "values": {
-        "collection": "text",
-        "stream": true
-      }
+ {
+  "name": "MongoDB",
+  "description": "### Description\nThe **MongoDB** component allows to interact with MongoDB.\n\nYou can set the MongoDB connection in the *config.json* file.\n\n### Configuration\n\n- **Collection name** sets the Mongo collection.\n- **Stream or not results** allows to receive the output of a query as a stream or not.\n\n### Input\n\nIn order to **insert** new elements to a collection, the component requires single dictionaries or lists of \ndictionaries.\n\nThe **query** and **delete** input require the filter of the query. For example:\n\n```\n{\"label\": \"science\"}\n```\n\nUse an empty dictionary if you don't need filters.\n\n\n",
+  "group": "Custom",
+  "icon": "RiCheckboxBlankCircleFill",
+  "click": null,
+  "events": null,
+  "configured": true,
+  "inputs": [
+   {
+    "id": "insert",
+    "label": "insert",
+    "service": "insert",
+    "to": "insert_output"
+   },
+   {
+    "id": "query",
+    "label": "query",
+    "service": "query",
+    "to": "query_output"
+   },
+   {
+    "id": "list",
+    "label": "list",
+    "service": "list",
+    "to": "list_output"
+   },
+   {
+    "id": "delete",
+    "label": "delete",
+    "service": "delete",
+    "to": "delete_output"
+   }
+  ],
+  "outputs": [
+   {
+    "id": "insert_output",
+    "label": "insert_output"
+   },
+   {
+    "id": "query_output",
+    "label": "query_output"
+   },
+   {
+    "id": "list_output",
+    "label": "list_output"
+   },
+   {
+    "id": "delete_output",
+    "label": "delete_output"
+   }
+  ],
+  "options": {
+   "values": {},
+   "args": [
+    {
+     "name": "collection",
+     "type": "text",
+     "label": "Collection name",
+     "helper": "Specify the mongo collection name",
+     "group": "",
+     "value": null,
+     "description": "",
+     "validation": null
     },
-    "disabled": false
+    {
+     "name": "stream",
+     "type": "boolean",
+     "label": "Stream or not results",
+     "helper": "",
+     "group": "",
+     "value": null,
+     "description": "Stream ",
+     "validation": null
+    }
+   ]
   }
+ }
 ]

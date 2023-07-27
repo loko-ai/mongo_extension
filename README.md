@@ -8,6 +8,15 @@ It allows to insert, query, delete data and list your collections directly withi
 component or to display the DB content from the **db manager** GUI.
 <p align="center"><img src="https://user-images.githubusercontent.com/30443495/230626093-6aafa47c-b083-4207-a935-58a7d017be11.png" width="80%" /></p>
 
+## MongoDB
+
+The **MongoDB** component allows to insert, query, list and delete data from MongoDB collections.
+
+<p align="center"><img src="https://github.com/Cecinamo/ner/assets/30443495/21c3aa88-bf82-4ded-944f-b596d7bd9763" width="80%" /></p>
+
+Within the component you can set the **Collection name** and choose if you want to receive the output of a query as a 
+**stream** or not.
+
 ## Configuration
 
 In the file *config.json* you can configure your MongoDB connection: 
